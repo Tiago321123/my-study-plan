@@ -8,6 +8,7 @@ class Book # é a mesma ideia de java, mas mais simples
         @author = author
         @pages = pages
     end
+
     def conta_pages 
         if @pages >=200
             return true
@@ -30,6 +31,7 @@ class Book # é a mesma ideia de java, mas mais simples
             @author = valor
         end
     end
+    
     def set_page(valor)
         if valor < 0
             puts "Números de páginas não pode ser menor que 0"

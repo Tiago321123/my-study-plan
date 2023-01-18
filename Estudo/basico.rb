@@ -32,7 +32,7 @@ puts "Digite seu nome: " # só isso pra input
 
 # METHODS
 
-def hello(name, age =2) # esse age=2 funciona quando não recebe por parâmetro
+def hello(name, age =2) # esse age=2 é padrão, funciona quando não recebe por parâmetro
     puts "Hello " + name + " " + age.to_s
 end
 
@@ -57,10 +57,10 @@ end
 usar_farois
 usar_farois("farol-alto")
 
-day =0
+day ="mon"
 case day
 when "mon"
-    day_name = "Monday"
+    puts day_name = "Monday"
 when "tue"
     day_name = "Tuesday"
 else "Invalid day"
@@ -93,26 +93,6 @@ puts outcome
 =begin
     The code between “begin” and “rescue” is where a probable exception might occur. If an exception occurs, the rescue block will execute. You should try to be specific about what exception you’re rescuing because it’s considered a bad practice to capture all exceptions.
 =end
-
-class Book # é a mesma ideia de java, mas mais simples
-    attr_accessor :title, :author, :pages
-    def initialize(title, author, pages) # sempre quando criar, Book.new
-        puts "Creating a new book" 
-        @title = title
-        @author = author
-        @pages = pages
-    end
-    def contaPages 
-        if @pages >=200
-            return true
-        end
-        return false
-    end
-end
-
-book1 = Book.new("Harry Potter", "JK Rowling", 300)
-puts book1.title # sem private, consigo acessar
-puts book1.contaPages
 
 
 class Box
