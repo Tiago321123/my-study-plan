@@ -1,11 +1,12 @@
 require 'httparty'
 
-response = HTTParty.get("https://brasilapi.com.br/api/ddd/v1/122433")
+print "Digite seu CEP: "
+cep = gets.chomp
+response = HTTParty.get("https://brasilapi.com.br/api/cep/v1/#{cep}")
 
 # puts response.body imprime o corpo todo
 parsed_response = JSON.parse(response.body)
-
-parsed_response.each do |key, value|
+parsed_response.sort.each do |key, value| # sort: ordem alfabética
     puts "#{key} #{value}"
 end
 
