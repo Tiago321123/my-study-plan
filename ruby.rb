@@ -33,3 +33,14 @@ end
 comer_um 'maçã' if fome?(14)
   
 comer_um 'maça' if fome?(10)
+
+def moveZeros(arr) # os dois tá certo
+    # array = arr.select {|n| n === 0}
+    # arr.delete(0)
+    # array = arr + array
+    # puts array.to_s
+    puts arr.partition { |num| num>0}
+end
+moveZeros [1,2,0,1,0,1,0,3,0,1]
+
+puts '#%02x%02x%02x' + %(0, 128, 64)

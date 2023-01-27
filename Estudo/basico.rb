@@ -59,40 +59,31 @@ usar_farois("farol-alto")
 
 day ="mon"
 case day
-when "mon"
-    puts day_name = "Monday"
-when "tue"
-    day_name = "Tuesday"
-else "Invalid day"
-
+    when "mon"
+        puts day_name = "Monday"
+    when "tue"
+        puts day_name = "Tuesday"
+    else "Invalid day"
 end
+
+#  OR
+
+def day(day)
+    case day
+        when :mon
+            puts day_name = "Monday"
+        when :tue
+            puts day_name = "Tuesday"
+        else "Invalid day"
+    end
+end
+day(:tue) # mais fácil e melhor para alterar depois
+
 
 =begin
     comentário maior
 =end
 
-
-#  Exception
-
-number = 2
-begin
-    #... process, may raise an 
-    outcome = number / nil 
-rescue 
-    #... error handler
-    puts "error catched"
-    outcome = "undefined"
-else
-    #... executes when no error
-ensure
-    #... always executed
-    outcome = "ensure it's undefined"
-end
-puts outcome
-
-=begin
-    The code between “begin” and “rescue” is where a probable exception might occur. If an exception occurs, the rescue block will execute. You should try to be specific about what exception you’re rescuing because it’s considered a bad practice to capture all exceptions.
-=end
 
 
 class Box
@@ -128,3 +119,15 @@ box.getArea
 require_relative "module.rb"
 include Tools
 Tools.sayHi("Marcos")
+
+module NaoSei
+    def  say(name)
+        puts "hello #{name}"
+    end
+
+    def sa(name)
+        puts "bye #{name}"
+    end
+end
+include NaoSei
+NaoSei.say "tiago"
