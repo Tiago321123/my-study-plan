@@ -1483,3 +1483,116 @@ Processing by ArticlesController#edit as HTML
 Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 4183)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-27 18:33:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 589.1ms | Allocations: 80019)
+  Rendered layout layouts/application.html.erb (Duration: 613.4ms | Allocations: 92991)
+Completed 200 OK in 637ms (Views: 620.1ms | ActiveRecord: 1.2ms | Allocations: 98370)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2023-01-27 18:33:48 -0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 10.6ms | Allocations: 4648)
+  Rendered articles/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 4897)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7005)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 7375)
+
+
+Started POST "/articles" for 127.0.0.1 at 2023-01-27 18:33:57 -0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"dff", "body"=>"sdgsdfzv"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.4ms | Allocations: 1884)
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1992)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4124)
+Completed 422 Unprocessable Entity in 18ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 5514)
+
+
+Started POST "/articles" for 127.0.0.1 at 2023-01-27 18:34:02 -0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"dff", "body"=>"sdgsdfzvas dgs dgadgasdga"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:17:in `create'
+  [1m[36mArticle Create (1.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dff"], ["body", "sdgsdfzvas dgs dgadgasdga"], ["created_at", "2023-01-27 21:34:02.255197"], ["updated_at", "2023-01-27 21:34:02.255197"]]
+  ↳ app/controllers/articles_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/articles/5
+Completed 302 Found in 57ms (ActiveRecord: 16.0ms | Allocations: 3397)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2023-01-27 18:34:02 -0300
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 197)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2472)
+Completed 200 OK in 21ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 5343)
+
+
+Started GET "/articles/5/edit" for 127.0.0.1 at 2023-01-27 18:34:04 -0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.2ms | Allocations: 1077)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1236)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 3336)
+Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 0.6ms | Allocations: 4140)
+
+
+Started PATCH "/articles/5" for 127.0.0.1 at 2023-01-27 18:34:07 -0300
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"dff", "body"=>"sdgsdfzvas dgs dgadgasdga"}, "commit"=>"Update Article", "id"=>"5"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://127.0.0.1:3000/articles/5
+Completed 302 Found in 11ms (ActiveRecord: 0.3ms | Allocations: 1141)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2023-01-27 18:34:07 -0300
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 53)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2314)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 3054)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-01-27 18:34:12 -0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1601)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3464)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.2ms | Allocations: 3730)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2023-01-27 18:35:54 -0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 971)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1033)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3140)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3411)
+
+
