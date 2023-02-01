@@ -1596,3 +1596,74 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3411)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-31 15:53:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 193.2ms | Allocations: 25295)
+  Rendered layout layouts/application.html.erb (Duration: 241.8ms | Allocations: 38368)
+Completed 200 OK in 264ms (Views: 248.5ms | ActiveRecord: 1.3ms | Allocations: 42017)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2023-01-31 15:53:28 -0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 12.4ms | Allocations: 2913)
+  Rendered articles/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 3162)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 5270)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 5639)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-31 15:58:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 120.9ms | Allocations: 25892)
+  Rendered layout layouts/application.html.erb (Duration: 142.8ms | Allocations: 39044)
+Completed 200 OK in 158ms (Views: 146.1ms | ActiveRecord: 0.9ms | Allocations: 42693)
+
+
+Started POST "/products" for 127.0.0.1 at 2023-01-31 15:58:12 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/products"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2023-01-31 15:58:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/products/new"):
+  
+Started GET "/products" for 127.0.0.1 at 2023-01-31 15:58:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/products"):
+  
+Started GET "/articles/1" for 127.0.0.1 at 2023-01-31 15:58:22 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 195)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2542)
+Completed 200 OK in 24ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 15889)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2023-01-31 15:58:23 -0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 38.3ms | Allocations: 2893)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 44.4ms | Allocations: 3111)
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | Allocations: 5221)
+Completed 200 OK in 86ms (Views: 75.8ms | ActiveRecord: 0.6ms | Allocations: 6025)
+
+

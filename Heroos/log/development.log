@@ -226,3 +226,130 @@ Processing by HerosController#new as HTML
 Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 6678)
 
 
+Started GET "/" for 127.0.0.1 at 2023-01-31 15:55:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tiago/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tiago/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 604)
+Completed 200 OK in 38ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 5041)
+
+
+Started GET "/" for 127.0.0.1 at 2023-01-31 15:55:27 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tiago/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tiago/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 257)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 807)
+
+
+Started GET "/heros" for 127.0.0.1 at 2023-01-31 15:55:48 -0300
+Processing by HerosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:6
+  Rendered heros/_hero.html.erb (Duration: 1.1ms | Allocations: 171)
+  Rendered heros/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 5601)
+  Rendered layout layouts/application.html.erb (Duration: 148.0ms | Allocations: 44567)
+Completed 200 OK in 152ms (Views: 148.2ms | ActiveRecord: 1.0ms | Allocations: 46001)
+
+
+Started GET "/heros/1" for 127.0.0.1 at 2023-01-31 15:55:50 -0300
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  Rendering layout layouts/application.html.erb
+  Rendering heros/show.html.erb within layouts/application
+  Rendered heros/_hero.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered heros/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 814)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2914)
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 5946)
+
+
+Started GET "/heros/1/edit" for 127.0.0.1 at 2023-01-31 15:55:53 -0300
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.6ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  Rendering layout layouts/application.html.erb
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 36.9ms | Allocations: 4259)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 55.6ms | Allocations: 4597)
+  Rendered layout layouts/application.html.erb (Duration: 69.9ms | Allocations: 6730)
+Completed 200 OK in 81ms (Views: 71.9ms | ActiveRecord: 0.6ms | Allocations: 7525)
+
+
+Started GET "/heros/1" for 127.0.0.1 at 2023-01-31 15:55:56 -0300
+Processing by HerosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.7ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  Rendering layout layouts/application.html.erb
+  Rendering heros/show.html.erb within layouts/application
+  Rendered heros/_hero.html.erb (Duration: 0.5ms | Allocations: 17)
+  Rendered heros/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 2684)
+Completed 200 OK in 36ms (Views: 25.1ms | ActiveRecord: 0.7ms | Allocations: 3433)
+
+
+Started GET "/heros/1/edit" for 127.0.0.1 at 2023-01-31 15:55:57 -0300
+Processing by HerosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.3ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  Rendering layout layouts/application.html.erb
+  Rendering heros/edit.html.erb within layouts/application
+  Rendered heros/_form.html.erb (Duration: 3.7ms | Allocations: 879)
+  Rendered heros/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1004)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3111)
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 3861)
+
+
+Started PATCH "/heros/1" for 127.0.0.1 at 2023-01-31 15:55:59 -0300
+Processing by HerosController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "hero"=>{"name"=>"deu certo!!!"}, "commit"=>"Update Hero", "id"=>"1"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+Redirected to http://127.0.0.1:3000/heros/1
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1676)
+
+
+Started GET "/heros/1" for 127.0.0.1 at 2023-01-31 15:55:59 -0300
+Processing by HerosController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  Rendering layout layouts/application.html.erb
+  Rendering heros/show.html.erb within layouts/application
+  Rendered heros/_hero.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered heros/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 656)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2756)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 3545)
+
+
+Started DELETE "/heros/1" for 127.0.0.1 at 2023-01-31 15:56:01 -0300
+Processing by HerosController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mHero Load (0.2ms)[0m  [1m[34mSELECT "heros".* FROM "heros" WHERE "heros"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/heros_controller.rb:63:in `set_hero'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heros_controller.rb:52:in `destroy'
+  [1m[36mHero Destroy (0.6ms)[0m  [1m[31mDELETE FROM "heros" WHERE "heros"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/heros_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heros_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/heros
+Completed 302 Found in 18ms (ActiveRecord: 7.4ms | Allocations: 2548)
+
+
+Started GET "/heros" for 127.0.0.1 at 2023-01-31 15:56:01 -0300
+Processing by HerosController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering heros/index.html.erb within layouts/application
+  [1m[36mHero Load (0.1ms)[0m  [1m[34mSELECT "heros".* FROM "heros"[0m
+  ↳ app/views/heros/index.html.erb:6
+  Rendered heros/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 796)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2903)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 3174)
+
+
