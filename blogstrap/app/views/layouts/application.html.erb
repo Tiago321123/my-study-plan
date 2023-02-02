@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <%# <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/sobre">Sobre</a></li>
+    </ul> é a mesma coisa que em ruby: %>
+  <%# http://localhost:3000/rails/info/routes   rotas do meu sistema %>
+    <%= link_to "Products-Home", products_path %> <%# ou "products#index" %>
+    <%= link_to "Sobre", sobre_index_path %>
+
     <%= yield %>
     <h1>Hello, esse é o template para todas as páginas html</h1>
   </body>
