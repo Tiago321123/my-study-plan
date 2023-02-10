@@ -2562,3 +2562,62 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.3ms | Allocations: 5256)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-09 18:07:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 3.2ms | Allocations: 669)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 160)
+  Rendered products/index.html.erb within layouts/application (Duration: 34.8ms | Allocations: 7492)
+  Rendered layout layouts/application.html.erb (Duration: 661.3ms | Allocations: 98963)
+Completed 200 OK in 688ms (Views: 669.9ms | ActiveRecord: 1.5ms | Allocations: 104258)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-02-09 18:07:17 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 0.6ms | Allocations: 171)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 160)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1348)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3567)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 3843)
+
+
+Started GET "/sobre" for 127.0.0.1 at 2023-02-09 18:07:19 -0300
+Processing by SobreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sobre/index.html.erb within layouts/application
+  Rendered sobre/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2609)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 3258)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-02-09 18:07:21 -0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 1.2ms | Allocations: 172)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 160)
+  Rendered products/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1334)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3553)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 3828)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2023-02-09 18:07:23 -0300
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 18.8ms | Allocations: 4821)
+  Rendered products/new.html.erb within layouts/application (Duration: 20.0ms | Allocations: 5108)
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 7327)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 7695)
+
+
